@@ -1,0 +1,25 @@
+In neural networks, activation functions introduce non-linearities, enabling the network to approximate complex functions. One of the desirable properties for an activation function is to be \emph{zero-centered}. Being zero-centered helps in achieving faster convergence during training, as the weights can adjust in both positive and negative directions more efficiently. Additionally, zero-centered functions can help mitigate the vanishing gradient problem, ensuring that gradients during backpropagation do not diminish too quickly.
+
+Definition: A function \( g(x) \) is said to be zero-centered if, for every value \( x \) in its domain where \( g(x) \) is positive, there exists an equivalent negative value \( -x \) such that:
+\[
+  g(-x) = -g(x).
+\]
+In other words, the function is symmetric about the origin, producing positive outputs for positive inputs and negative outputs for negative inputs.
+
+Consider the following activation function, defined for all real \(x\):
+\[
+  g(x) \;=\; \frac{x}{1 + |x|}.
+\]
+
+\begin{enumerate}
+  \item Zero-Centered Property.
+  Show that \( g(x) \) is zero-centered by proving \( g(-x) = -g(x) \) for all \( x \). 
+  (Hint: carefully handle the absolute value.)
+
+  \item Derivative and Gradient Behavior
+    \begin{enumerate}
+      \item Compute the derivative \( g'(x) \) for \( x \neq 0 \).
+      \item Evaluate \( g'(0) \) (Hint: the function is continuous).
+      \item Based on your results, show whether \( g(x) \) might cause vanishing or exploding gradients for large values of \( |x| \) (Hint: show the limits).
+    \end{enumerate}
+\end{enumerate}
